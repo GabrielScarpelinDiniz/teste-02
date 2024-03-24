@@ -303,6 +303,7 @@ Classe Circulo Herda FormaGeometrica:
         RETORNA PI * (raio * raio)
     
 FIM DA CLASSE Circulo
+
 Classe Retangulo Herda FormaGeometrica:
     Atributos:
         - cor
@@ -326,7 +327,7 @@ INICIO
     var INTEIRO metaTempoEmSegundos <- 120
     var INTEIRO velocidadeMaximaEmMetrosPorSegundo <- 70
     var INTEIRO velocidadeEmMetrosPorSegundo <- 0
-
+    tempoCalculado <- metaTempoEmSegundos + 1
     var INTEIRO aceleracao = 0
     ENQUANTO (tempoCalculado >= metaTempoEmSegundos) FACA
         aceleracao <- aceleracao + 1
@@ -334,6 +335,7 @@ INICIO
         tempoNaVelocidadeMaxima <- (distanciaCorridaEmKm - (aceleracao x tempoEmAceleracaoAteVelocidadeMaxima ^ 2)) / velocidadeMaximaEmMetrosPorSegundo
         tempoCalculado <- tempoEmAceleracaoAteVelocidadeMaxima + tempoNaVelocidadeMaxima
     FIM DO LOOP
+    RETORNA aceleracao
 FIM
 ```
 
@@ -382,5 +384,9 @@ Funcao multiplicarMatrizes(matrizA, matrizB)
                 soma <- soma + (matrizA[i][k] * matrizB[k][j])
             matrizResultado[i][j] <- soma
     
+matrizA <- [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+matrizMultiplicacao <- multiplicarMatrizes(matrizA, matrizB)
+Escrever("multiplicação das matrizes:")
+ImprimirMatriz(matrizMultiplicacao)
 ````
-[[9, 8, 7], [6, 5, 4], [3, 2, 1]] [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
